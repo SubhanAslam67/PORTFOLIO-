@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Subhan Aslam, Ethical Hacker</title>
+  <style>
+    
+    :root{
+      --bg:#070707;
+      --panel:#0d0d0d;
+      --accent:#2fe06a;
+      --muted:#8b8b8b;
+      --glass: rgba(255,255,255,0.02);
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: "Courier New", Courier, monospace;
+      background:
+        radial-gradient(1200px 600px at 10% 10%, rgba(47,224,106,0.03), transparent 10%),
+        linear-gradient(180deg,#060606 0%, #0b0b0b 100%);
+      color: #dfffe6;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.45;
+      padding:30px;
+    }
+
+    .container{
+      max-width:980px;
+      margin:0 auto;
+      background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.00));
+      border:1px solid rgba(47,224,106,0.06);
+      border-radius:10px;
+      overflow:hidden;
+      box-shadow:0 10px 30px rgba(0,0,0,0.6);
+    }
+
+    header{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:20px;
+      padding:22px 28px;
+      background:linear-gradient(90deg, rgba(47,224,106,0.02), transparent 40%);
+      border-bottom:1px dashed rgba(47,224,106,0.06);
+    }
+
+    .brand{
+      display:flex;
+      gap:14px;
+      align-items:center;
+    }
+
+    .logo{
+      width:46px;
+      height:46px;
+      border-radius:6px;
+      background:linear-gradient(135deg, #081, #0b3);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      color:#011;
+      font-weight:700;
+      box-shadow:0 2px 10px rgba(47,224,106,0.08) inset;
+    }
+
+    h1{
+      font-size:18px;
+      margin:0;
+      letter-spacing:0.6px;
+      color:var(--accent);
+    }
+    .subtitle{
+      font-size:12px;
+      color:var(--muted);
+      margin-top:2px;
+    }
+
+    nav a{
+      color:var(--muted);
+      text-decoration:none;
+      margin-left:14px;
+      font-size:13px;
+      transition:color .15s;
+    }
+    nav a:hover{ color:var(--accent); }
+
+    main{display:flex; gap:20px; padding:28px; flex-wrap:wrap;}
+
+    .left{
+      flex:1 1 320px;
+      min-width:260px;
+    }
+
+    .card{
+      background:var(--panel);
+      border-radius:8px;
+      padding:18px;
+      margin-bottom:18px;
+      border:1px solid rgba(255,255,255,0.02);
+    }
+
+    .card h2{
+      margin:0 0 8px 0;
+      color:var(--accent);
+      font-size:14px;
+    }
+
+    .about p{ color:#cfefd0; margin:8px 0 0 0; font-size:14px; }
+
+    .skills ul{
+      list-style:none;
+      padding:0;
+      margin:8px 0 0 0;
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+    }
+    .skills li{
+      background:var(--glass);
+      padding:6px 10px;
+      border-radius:6px;
+      font-size:13px;
+      color:var(--muted);
+      border:1px solid rgba(47,224,106,0.03);
+    }
+
+    .right{
+      flex:1 1 300px;
+      min-width:260px;
+    }
+
+    .project{
+      padding:12px;
+      border-radius:6px;
+      background:linear-gradient(180deg, rgba(255,255,255,0.01), transparent);
+      border:1px solid rgba(47,224,106,0.03);
+      margin-bottom:12px;
+    }
+    .project h3{ margin:0; font-size:13px; color:var(--accent) }
+    .project p{ margin:6px 0 0 0; color:#cfefd0; font-size:13px }
+
+    .meta{ font-size:12px; color:var(--muted); margin-top:8px; }
+
+    footer{
+      padding:16px 28px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      border-top:1px dashed rgba(47,224,106,0.05);
+      background:transparent;
+      color:var(--muted);
+      font-size:13px;
+    }
+
+    .terminal{
+      background:#070807;
+      border:1px solid rgba(47,224,106,0.04);
+      padding:12px;
+      font-size:13px;
+      color:#bfffcf;
+      border-radius:6px;
+      font-family: "Courier New", monospace;
+    }
+    .cmd{ color:var(--accent) }
+
+    
+    @media (max-width:740px){
+      main{ padding:18px; }
+      header{ padding:14px; }
+      .brand h1{ font-size:16px; }
+      footer{ flex-direction:column; gap:8px; align-items:flex-start; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container" role="document">
+    <header>
+      <div class="brand">
+        <div class="logo">SA</div>
+        <div>
+          <h1>Subhan Aslam</h1>
+          <div class="subtitle">Ethical Hacker · Bug Bounty · CTF Enthusiast</div>
+        </div>
+      </div>
+
+      <nav aria-label="Main">
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="left" aria-labelledby="about-title">
+        <div class="card about" id="about">
+          <h2 id="about-title">About (Ethical Focus)</h2>
+          <p>
+            I'm an ethical hacker who focuses on responsible vulnerability discovery, web security,
+            and capture-the-flag (CTF) challenges. I practice in lab environments and disclose findings
+            responsibly to help improve security. This portfolio highlights my skills, safe projects,
+            and writeups.
+          </p>
+        </div>
+
+        <div class="card skills" aria-labelledby="skills-title">
+          <h2 id="skills-title">Skills</h2>
+          <ul>
+            <li>Web Security (OWASP)</li>
+            <li>Bug Bounty</li>
+            <li>CTF: Forensics, Pwn, Web</li>
+            <li>Linux & Networking</li>
+            <li>Python (scripts & tools)</li>
+            <li>Secure Coding Reviews</li>
+          </ul>
+        </div>
+
+        <div class="card" aria-labelledby="lab-title">
+          <h2 id="lab-title">Lab / Tools (examples)</h2>
+          <div class="terminal">
+            <div><span class="cmd">$</span> set up: local lab (VulnVM, DVWA)</div>
+            <div><span class="cmd">$</span> analyze: web-apps, reports, proof-of-concept (safe)</div>
+            <div style="margin-top:8px;" class="meta">Note: I only run tests in owned or authorized environments.</div>
+          </div>
+        </div>
+      </section>
+
+      <aside class="right" aria-labelledby="projects-title">
+        <div class="card" id="projects">
+          <h2 id="projects-title">Selected Projects & Writeups</h2>
+
+          <article class="project">
+            <h3>CTF Writeups · 2025</h3>
+            <p>Writeups for challenges solved in online CTFs — categories: web, forensics, and crypto.</p>
+            <div class="meta">Public writeups (no exploits) — links to blog/GitHub.</div>
+          </article>
+
+          <article class="project">
+            <h3>Bug Bounty Reports</h3>
+            <p>Synopsis of responsibly disclosed findings and remediation suggestions (redacted).</p>
+            <div class="meta">Focus: clear proof and responsible disclosure process.</div>
+          </article>
+
+          <article class="project">
+            <h3>Security Audit: Demo App</h3>
+            <p>Non-sensitive sample audit showing findings, risk levels, and recommended fixes.</p>
+            <div class="meta">Safe, educational, and anonymized.</div>
+          </article>
+        </div>
+
+        <div class="card" id="contact" aria-labelledby="contact-title">
+          <h2 id="contact-title">Contact</h2>
+          <p>Email: <a href="mailto:subhan@example.com" style="color:var(--accent); text-decoration:none">subhan@example.com</a></p>
+          <p>GitHub: <a href="#" style="color:var(--accent); text-decoration:none">github.com/subhanaslam</a></p>
+          <p class="meta">Available for responsible security research, CTF collabs, and speaking.</p>
+        </div>
+      </aside>
+    </main>
+
+    <footer>
+      <div>© 2025 Subhan Aslam</div>
+      <div class="meta">Ethical hacking only — authorized testing & responsible disclosure</div>
+    </footer>
+  </div>
+</body>
+</html>
